@@ -6,6 +6,11 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro # mounting custom config to the images config location to override default config
   php:
+    build: 
+      context: ./dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html:delegated
   mysql:
   composer:
   artisan:
