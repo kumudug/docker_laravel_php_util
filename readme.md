@@ -24,6 +24,7 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
       * Package manager to install 3rd party packages
       * Used to install laravel
       * Then laravel uses this to install dependencies
+      * Composer is a dependency manager written in and for PHP.
 
    * Laravel Artisan
       * A tool for laravel
@@ -68,4 +69,13 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
       - MYSQL_PASSWORD=secreat
       - MYSQL_ROOT_PASSWORD=secreat
 
+## Composer Tool
 
+* There is an official docker image for this tool
+   - [docker-img](https://hub.docker.com/_/composer)
+   - We are building our own image based on the official docker image with some customizations
+   - We wanna specify the entry point. Though this can be done via `compose.yaml` its more clear and readable to have a `.dockerfile` and create a custom image
+   - We are using this image to install packages. We want the packages installed in our source folder
+   - We bound our local disk `src` folder to `/var/www/html` in the php container
+   - Now we want the composer to install packages there. Thus we are binding our local `src` folder into the composer container as well at `/var/www/html`
+   - So this gets connected to php container via local disk
