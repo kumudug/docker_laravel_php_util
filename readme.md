@@ -58,3 +58,14 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
      - official dockerfile exposes port `9000`. This was found using [Dockerfile](https://github.com/docker-library/php/blob/b9f17156020c3aef71df681b27684533529347a7/7.4/alpine3.16/fpm/Dockerfile) in the images github repo. Not from documentation
      - Since its nginx and php that needs to cummunicate with these ports there is no reason why we need to map these ports. Instead we can change the `nginx.conf` to point to the php port `9000` and be done with it
 
+## MySQL Database
+
+* Using the official mysql image [image](https://hub.docker.com/_/mysql)
+   - Using version 5.7
+   - Use environment variables to set 
+      - MYSQL_DATABASE - initial database name set to `homestead`. This is needed for laravel and can be found in laravel documentation
+      - MYSQL_USER=homestead - default for laravel
+      - MYSQL_PASSWORD=secreat
+      - MYSQL_ROOT_PASSWORD=secreat
+
+
