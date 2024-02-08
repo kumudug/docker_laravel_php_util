@@ -82,5 +82,5 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
 
 # Setting up a laravel project
 
-* We are gonna use the `composer` image and run a one time command using docker compose
+* We are gonna use the `composer` image and run a one time command using docker compose. This will create a laravel project for us in the src folder. 
    - `docker compose run --rm composer create-project --perfer-dist laravel/laravel .`
