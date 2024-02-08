@@ -79,3 +79,8 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
    - We bound our local disk `src` folder to `/var/www/html` in the php container
    - Now we want the composer to install packages there. Thus we are binding our local `src` folder into the composer container as well at `/var/www/html`
    - So this gets connected to php container via local disk
+
+# Setting up a laravel project
+
+* We are gonna use the `composer` image and run a one time command using docker compose
+   - `docker compose run --rm composer create-project --perfer-dist laravel/laravel .`
