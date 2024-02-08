@@ -6,6 +6,9 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro # mounting custom config to the images config location to override default config
       - ./src:/var/www/html
+    depends_on:
+      - php
+      - mysql
   php:
     build: 
       context: ./dockerfiles

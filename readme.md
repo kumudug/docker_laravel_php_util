@@ -84,3 +84,11 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
 
 * We are gonna use the `composer` image and run a one time command using docker compose. This will create a laravel project for us in the src folder. 
    - `docker compose run --rm composer create-project --perfer-dist laravel/laravel .`
+
+# Running
+
+* `docker compose up -d server php mysql`
+* By adding `depends_on` to the `server` service we can start that only and not need to input all needed services
+   - Now we can do `docker compose up -d server`
+* To force docker compose to go through images and rebuild if something changed we should also use the `--build` flag
+   - `docker compose up -d --build server`
