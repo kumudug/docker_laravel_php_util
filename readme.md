@@ -86,6 +86,7 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
    - So we are gonna use the same docker file as php to run this
    - The php docker file doesn't have an entry point as we are using it as a util to funnel php files for the nginx server
    - We will override the entry point in the compose file
+   - To run `docker compose run --rm artisan migrate`
 
 # Setting up a laravel project
 
