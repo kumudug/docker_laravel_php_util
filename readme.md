@@ -87,6 +87,8 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
 
 # Running
 
+* Had to specify platform for php
+   - I was running on m1 mac arm and there was no version compatible with that for the requested `php:7.4-fpm-alpine`
 * `docker compose up -d server php mysql`
 * By adding `depends_on` to the `server` service we can start that only and not need to input all needed services
    - Now we can do `docker compose up -d server`
