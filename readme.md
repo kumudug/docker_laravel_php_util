@@ -80,6 +80,13 @@ This is a demo of setting up a laravel php dev environment using the Docker "uti
    - Now we want the composer to install packages there. Thus we are binding our local `src` folder into the composer container as well at `/var/www/html`
    - So this gets connected to php container via local disk
 
+## Artisan utility container
+
+* Artisan is a tool that runs on php
+   - So we are gonna use the same docker file as php to run this
+   - The php docker file doesn't have an entry point as we are using it as a util to funnel php files for the nginx server
+   - We will override the entry point in the compose file
+
 # Setting up a laravel project
 
 * We are gonna use the `composer` image and run a one time command using docker compose. This will create a laravel project for us in the src folder. 
